@@ -1,0 +1,35 @@
+#container {
+    display: flex;
+    flex-wrap: wrap;
+
+    background-color: aliceblue;
+}
+
+.cardDiv {
+    height: 300px;
+    width: 250px;
+    border: 1px solid black;
+    border-radius: 12px;
+    padding: 5px;
+}
+
+.nameSpan {
+    background-color: aquamarine;
+}
+
+.nameHeading {
+    text-align: center;
+}
+
+.msg {
+    background-color: burlywood;
+}
+
+.msg::selection {
+    background-color: black;
+    color: whitesmoke;
+}
+
+.date {
+    background-color: blanchedalmond;
+}
