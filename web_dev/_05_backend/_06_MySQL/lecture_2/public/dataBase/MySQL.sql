@@ -1,0 +1,13 @@
+-- SHOW DATABASES ;
+
+CREATE DATABASE IF NOT EXISTS test ;
+
+USE test ;
+
+CREATE TABLE user (
+    id VARCHAR(50) PRIMARY KEY,
+    userName VARCHAR(50) NOT NULL,
+    email VARCHAR(50) NOT NULL,
+    msg VARCHAR(50) NOT NULL,
+    password VARCHAR(50) NOT NULL
+) ;

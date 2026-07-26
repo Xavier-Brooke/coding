@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>edit</title>
+</head>
+<body>
+
+    <h1><i>Edit your info</i></h1>
+
+    <form method="post" action="/api/<%= ID %>?_method=PATCH">
+
+        <label for="id">ID :- </label>
+        <input type="text" id="id" value="<%= ID %>" readonly size="<%= ID.length %>">
+        <br><br>
+
+        <label for="userName">userName :- </label>
+        <input type="text" id="userName" value="<%= userName %>" readonly>
+        <br><br>
+
+        <label for="email">Edit your email :- </label>
+        <input type="email" id="email" name="email" required maxlength="50" value="<%= email %>">
+        <br><br>
+
+        <textarea name="msg" maxlength="50" required cols="35" rows="5"><%= msg %></textarea>
+        <br><br>
+
+        <button onclick="location.href='/api'">Home</button> &emsp; <button onclick="location.href='/api/users'">Back</button> &emsp; <button>Submit</button>
+    </form>
+    
+</body>
+</html>

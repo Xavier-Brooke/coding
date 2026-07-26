@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>details</title>
+</head>
+<body>
+    <h1>User Details</h1>
+
+    <form method="get" action="/api/users">
+
+        <label for="id">ID :- </label>
+        <input type="text" id="id" value="<%= ID %>" readonly size="<%= ID.length %>">
+        <br><br>
+
+        <label for="userName">userName :- </label>
+        <input type="text" id="userName" value="<%= userName %>" readonly>
+        <br><br>
+
+        <label for="email">email :- </label>
+        <input type="email" id="email" value="<%= email %>" readonly>
+        <br><br>
+
+        <textarea readonly cols="35" rows="5"><%= msg %></textarea>
+        <br><br>
+
+        <button onclick="location.href='/api'">Home</button> &emsp; <button onclick="location.href='/api/<%= ID %>/eidt'">Edit</button> &emsp; <button>Back</button>
+    </form>
+
+</body>
+</html>
