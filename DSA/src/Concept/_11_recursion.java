@@ -74,13 +74,17 @@ public class _11_recursion {
     /*
     * Question 7 :-
     * WAF to check if an array is sorted or not
-    * Time Complexity :- O(), Space Complexity :- O()*/
+    * Time Complexity :- O(n), Space Complexity :- O(n)*/
     public static boolean isSorted(int[] arr, int idx) {
-        if(idx == arr.length) {
+        if((idx+1) == arr.length) {
             return true ;
         }
 
-        return arr[idx] <= arr[idx + 1];
+        if(arr[idx] > arr[idx+1]) {
+            return false ;
+        }
+
+        return isSorted(arr, idx+1) ;
     }
 
     // main function
