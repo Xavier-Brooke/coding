@@ -87,14 +87,87 @@ public class _11_recursion {
         return isSorted(arr, idx+1) ;
     }
 
+    /*
+    * Question 8 :-
+    * WAF to find the first occurrence of the element
+    * Time Complexity :- O(n), Space Complexity :- O(n)*/
+    public static int firstOccurrence(int[] arr, int key, int idx) {
+        if(idx == arr.length) {
+            return -1 ;
+        }
+
+        if(arr[idx] == key) {
+            return idx ;
+        }
+
+        return firstOccurrence(arr, key, idx+1) ;
+    }
+
+    /*
+    * Question 9 :-
+    * WAF to find the last occurrence of an element
+    * Time Complexity :- O(n), Space Complexity :- O(n)*/
+
+    // Second Method
+    public static int lastOccurrence(int[] arr, int key, int idx) {
+        if(idx >= arr.length) {
+            return -1 ;
+        }
+
+        int isFound = lastOccurrence(arr, key, idx+1) ;
+
+        if((isFound ==  -1) && (arr[idx] == key)) {
+            return idx ;
+        }
+
+        return isFound ;
+    }
+    /*
+    First method
+    public static int lastOccurrence(int[] arr, int key, int idx) {
+        if(idx < 0) {
+            return -1 ;
+        }
+
+        if(arr[idx] == key) {
+            return idx ;
+        }
+
+        return lastOccurrence(arr, key, idx-1) ;
+    }
+     */
+
+    /*
+    * Question 10 :-
+    * WAF to calculate x to the power n
+    * Time Complexity :- O(n), Space Complexity :- O(n)*/
+    public static int power(int x, int n) {
+        if(n == 0) {
+            return 1 ;
+        }
+        return x * power(x, n-1) ;
+    }
+
     // main function
     public static void main(String[] args) {
 
+        // Test Case for Question 10 :-
+//        int x = 2, y = 5 ;
+//        System.out.println(power(2, 5));
+
+        // Test Case for Question 9 :-
+//        int[] arr = {8, 3, 6, 9, 5, 10, 2, 5, -3} ;
+//        System.out.println(lastOccurrence(arr, 5, 0));
+
+        // Test Case for Question 8 :-
+//        int[] arr = {8, 3, 6, 9, 5, 10, 2, 5, -3} ;
+//        System.out.println(firstOccurrence(arr, -3, 0));
+
         // Test Case for Question 7 :-
-        int[] arr1 = {1, 87, -234, 0, 234, 875} ;
-        System.out.println(isSorted(arr1, 0));
-        int[] arr2 = {1, 2, 3, 4, 5} ;
-        System.out.println(isSorted(arr2, 0));
+//        int[] arr1 = {1, 87, -234, 0, 234, 875} ;
+//        System.out.println(isSorted(arr1, 0));
+//        int[] arr2 = {1, 2, 3, 4, 5} ;
+//        System.out.println(isSorted(arr2, 0));
 
         // Test Case for Question 6 :-
 //        int fibo = fibonacci(8) ;
