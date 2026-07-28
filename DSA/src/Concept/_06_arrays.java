@@ -156,10 +156,8 @@ public class _06_arrays {
         for(int i = 0; i < n; i++) {
             for(int j = i; j < n; j++) {
                 if(i == 0) {
-                    currSum = prefixSum[i] ;
-                } else if(i == j) {
-                    currSum = arr[i] ;
-                } else if(i != j) {
+                    currSum = prefixSum[j] ;
+                } else {
                     currSum = prefixSum[j] - prefixSum[i-1] ;
                 }
                 maxSum = Math.max(maxSum, currSum) ;
@@ -224,20 +222,12 @@ public class _06_arrays {
 
         leftMax[0] = heights[0] ;
         for(int i = 1; i < n; i++) {
-            if(heights[i] > leftMax[i-1]) {
-                leftMax[i] = heights[i] ;
-            } else {
-                leftMax[i] = leftMax[i-1] ;
-            }
+            leftMax[i] = Math.max(heights[i], leftMax[i-1]) ;
         }
 
         rightMax[n-1] = heights[n-1] ;
         for(int i = (n-2); i >= 0; i--) {
-            if(heights[i] > rightMax[i+1]) {
-                rightMax[i] = heights[i] ;
-            } else {
-                rightMax[i] = rightMax[i+1] ;
-            }
+            rightMax[i] = Math.max(heights[i], rightMax[i+1]) ;
         }
 
         for(int i = 0; i < n; i++) {
@@ -439,8 +429,8 @@ public class _06_arrays {
 //        System.out.println(stockBuyAndSell(prices));
 
         // Test Case for Question 12 :-
-//        int[] heights = {4, 2, 0, 6, 3, 2, 5} ;
-//        System.out.println(trappingRainWater(heights));
+        int[] heights = {4, 2, 0, 6, 3, 2, 5} ;
+        System.out.println(trappingRainWater(heights));
 
         // Test Case for Question 11 :-
 //        int[] arr = {1, 2, 3, 4, 5} ;
@@ -456,7 +446,7 @@ public class _06_arrays {
 //        System.out.println(max_sumArray_sum_kadane(arr));
 
         // Test Case for Question 9 :-
-//        int[] arr = {-1, -2, -6, -1, -30} ;
+//        int[] arr = {1, -2, 6, -1, 3} ;
 //        System.out.println(max_sumArray_sum_prefixArray(arr));
 
         // Test Case for Question 8 :-
@@ -468,8 +458,8 @@ public class _06_arrays {
 //        printSubarray(arr);
 
         // Test Case for Question 6 :-
-        int[] arr = {2, 4, 6, 8, 10} ;
-        printPairs(arr);
+//        int[] arr = {2, 4, 6, 8, 10} ;
+//        printPairs(arr);
 
         // Test Case for Question 5 :-
 //        int[] arr = {234, 876, -76432, -43, 0, 876, 752, 658, 832, -436, -612, -723} ;
