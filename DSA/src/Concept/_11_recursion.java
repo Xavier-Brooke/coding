@@ -148,8 +148,30 @@ public class _11_recursion {
         return x * power(x, n-1) ;
     }
 
+    /*
+    * Question 11 :-
+    * Write an optimized program to calculate x to the power n
+    * Time Complexity :- O(logN), Space Complexity :- O(n) */
+    public static int optimizedPower(int x, int n) {
+        if(n == 0) {
+            return 1 ;
+        }
+
+        int power = optimizedPower(x, n/2) ;
+
+        if(n%2 == 0) {
+            return power * power ;
+        } else {
+            return x * power * power ;
+        }
+    }
+
     // main function
     public static void main(String[] args) {
+
+        // Test Case for Question 11 :-
+        int x = 2, y = 7 ;
+        System.out.println(optimizedPower(x, y));
 
         // Test Case for Question 10 :-
 //        int x = 2, y = 5 ;
