@@ -166,12 +166,50 @@ public class _11_recursion {
         }
     }
 
+    /*
+    * Question 12 :-
+    * Tiling Problem
+    * Time Complexity :- O(2^n), Space Complexity :- O(n)*/
+    public static int tilingProblem(int n) {
+        if(n == 0 || n == 1) {
+            return 1 ;
+        }
+        return tilingProblem(n-1) + tilingProblem(n-2) ;
+    }
+
+    /*
+    * Question 13 :-
+    * Remove Duplicates from String
+    * Time Complexity :- O(), Space Complexity :- O()*/
+    public static void removeDuplicate(String str, int idx, StringBuilder ans, boolean[] map) {
+        if(idx == str.length()) {
+            System.out.println(ans) ;
+            return ;
+        }
+
+        char currChar = str.charAt(idx) ;
+        if(map[currChar - 'a']) {
+            removeDuplicate(str, idx+1, ans, map);
+        } else {
+            map[currChar - 'a'] = true ;
+            removeDuplicate(str, idx+1, ans.append(str.charAt(idx)), map);
+        }
+    }
+
     // main function
     public static void main(String[] args) {
 
+        // Test Case for Question 13 :-
+        String str = "aaabcddddeffghiiijjklmmmmn" ;
+        removeDuplicate(str, 0, new StringBuilder(), new boolean[26]);
+
+        // Test Case for Question 12 :-
+//        int n = 4 ;
+//        System.out.println(tilingProblem(n));
+
         // Test Case for Question 11 :-
-        int x = 2, y = 7 ;
-        System.out.println(optimizedPower(x, y));
+//        int x = 2, y = 7 ;
+//        System.out.println(optimizedPower(x, y));
 
         // Test Case for Question 10 :-
 //        int x = 2, y = 5 ;
