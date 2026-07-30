@@ -196,12 +196,44 @@ public class _11_recursion {
         }
     }
 
+    /*
+    * Question 14 :-
+    * Friends Pairing Problem
+    * Time Complexity :- O(), Space Complexity :- O()*/
+    public static int friendsPairing(int n) {
+        if(n == 1 || n == 2) {
+            return n ;
+        }
+        return  friendsPairing(n-1) +  (n-1) * friendsPairing(n-2);
+    }
+
+    /*
+    * Questin 15 :-
+    * Print all binary strings of size n without consecutive ones
+    * Time Complexity :- O(), Space Complexity :- O()*/
+    public static void binaryString(int n, int ld, String str) {
+        if(n == 0) {
+            System.out.println(str) ;
+            return ;
+        }
+        binaryString(n-1, 0, str+"0");
+        if(ld == 0) {
+            binaryString(n-1, 1, str+"1");
+        }
+    }
+
     // main function
     public static void main(String[] args) {
 
+        // Test Case for Question 15 :-
+        binaryString(3, 0, "") ;
+
+        // Test Case for Questin 14 :-
+//        System.out.println(friendsPairing(3));
+
         // Test Case for Question 13 :-
-        String str = "aaabcddddeffghiiijjklmmmmn" ;
-        removeDuplicate(str, 0, new StringBuilder(), new boolean[26]);
+//        String str = "aaabcddddeffghiiijjklmmmmn" ;
+//        removeDuplicate(str, 0, new StringBuilder(), new boolean[26]);
 
         // Test Case for Question 12 :-
 //        int n = 4 ;
