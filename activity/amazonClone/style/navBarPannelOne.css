@@ -45,3 +45,12 @@
 .pannel-one-searchBox .search-options {
     height: 40px;
 }
+
+/* */
+.flag-div img {
+    height: 30px;
+}
+
+.flag-div title {
+    font-size: 1.1rem;
+}
