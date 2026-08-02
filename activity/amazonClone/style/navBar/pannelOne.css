@@ -1,0 +1,109 @@
+.navPannel-one {
+    height: 60px;
+    padding: 3px;
+    background-color: #131921;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* Logo */
+.navPannel-one .logo {
+    height: 50px;
+}
+
+.logo img {
+    height: 100%;
+}
+
+/* Location */
+.navPannel-one .location {
+    height: 50px;
+    color: #fff;
+}
+
+.location .info {
+    font-size: 12px;
+    color: #ccc;
+    padding-left: 20px;
+}
+
+.location .location-icon {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* Search Box */
+.search-box {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    height: 50px;
+    width: 400px;
+}
+
+.search-box .search-option select,input,i {
+    height: 35px;
+}
+
+.search-box .search-area {
+    background-color: #fff;
+    height: 35px;
+    color: #000;
+    width: 300px;
+    text-align: center;
+}
+
+.search-box .search-icon {
+    height: 35px;
+    background-color: orange;
+    text-align: center;
+    width: 50px;
+    font-size: 22px;
+}
+
+/* Country And Language */
+.navPannel-one .country {
+    display: flex;
+    color: #fff;
+}
+
+.country .icon img {
+    height: 20px;
+}
+
+.country .language {
+    font-size: 20px;
+}
+
+/* login option */
+.navPannel-one .login {
+    color: #fff;
+}
+
+.login #login-info-one {
+    font-size: 12px;
+}
+
+.login #login-info-two {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* returns-orderes */
+.returns-orderes {
+    color: #fff;
+}
+
+.returns-orderes #returns {
+    font-size: 12px;
+}
+
+.returns-orderes #orders {
+    font-size: 14px;
+}
+
+/* Cart */
+.cart {
+    color: #fff;
+}
