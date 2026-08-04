@@ -2,6 +2,8 @@ package Concept;
 
 import java.util.Random;
 
+import static Concept._06_arrays.printArr;
+
 // Pen class
 class Pen {
     String color ;
@@ -43,20 +45,39 @@ class Bank {
 class Student {
     String name ;
     int roll ;
+    int[] marks = new int[3] ;
+    String password ;
 
     Student() {
         System.out.println("Default constructor is called");
     }
 
-    Student(String name, int roll) {
+    Student(String name, int roll, int[] marks, String password) {
         System.out.println("Parametrized constructor is called");
         this.name = name ;
         this.roll = roll ;
+        this.marks = marks ;
+        this.password =  password ;
+    }
+
+    // copy constructor
+    Student(Student s) {
+        System.out.println("copy constructor called");
+        this.name = s.name ;
+        this.roll = s.roll ;
+        this.marks = s.marks ;
+        this.password = s.password;
+    }
+
+    void setMarks(int[] marks) {
+        this.marks = marks ;
     }
 
     void getDetails() {
         System.out.println("Name :- " + this.name);
         System.out.println("Roll :- " + this.roll);
+        System.out.println("Password :- " + this.password);
+        printArr(this.marks) ;
     }
 }
 
@@ -67,8 +88,16 @@ public class _12_OOPs {
 
         Random rand = new Random() ;
 
-        Student s1 = new Student("Xavier Brooke", rand.nextInt(200)+2) ;
-        s1.getDetails() ;
+//        int[] marks = {90, 87, 88} ;
+//        Student s1 = new Student("Xavier Brooke", rand.nextInt(200)+2, marks, "This is password") ;
+//        s1.getDetails() ;
+//
+//        System.out.println();
+//        System.out.println("-".repeat(20));
+//        Student s2 = new Student(s1) ;
+//        int[] s2Marks = {2, 3, 7} ;
+//        s2.setMarks(s2Marks);
+//        s2.getDetails();
 
         // Bank class Test Case
 //        Bank c1 = new Bank() ;
