@@ -201,9 +201,9 @@ public class _06_arrays {
     public static void rotateArr(int[] arr, int d) {
         int n = arr.length ;
         d %= n ;
-        reverseArr(arr, 0, d-1);
-        reverseArr(arr, d, n-1);
         reverseArr(arr, 0, n-1);
+        reverseArr(arr, 0, n-d-1);
+        reverseArr(arr, n-d, n-1);
     }
 
     /*
@@ -429,21 +429,21 @@ public class _06_arrays {
 //        System.out.println(trappingRainWater(heights));
 
         // Test Case for Question 11 :-
-//        int[] arr = {1, 2, 3, 4, 5} ;
-//        int d = 2 ;
-//        System.out.println("Array before rotation :- ");
-//        printArr(arr);
-//        rotateArr(arr, 2);
-//        System.out.println("\nArray after rotation :- ");
-//        printArr(arr);
+        int[] arr = {7, 3, 9, 1} ;
+        int d = 9 ;
+        System.out.println("Array before rotation :- ");
+        printArr(arr);
+        rotateArr(arr, d);
+        System.out.println("\nArray after rotation :- ");
+        printArr(arr);
 
         // Test Case for Questin 10 :-
 //        int[] arr = {1, -2, 6, -1, 3} ;
 //        System.out.println(max_sumArray_sum_kadane(arr));
 
         // Test Case for Question 9 :-
-        int[] arr = {1, -2, 6, -1, 3} ;
-        System.out.println(max_sumArray_sum_prefixArray(arr));
+//        int[] arr = {1, -2, 6, -1, 3} ;
+//        System.out.println(max_sumArray_sum_prefixArray(arr));
 
         // Test Case for Question 8 :-
 //        int[] arr = {1, -2, 6, -1, 3} ;
