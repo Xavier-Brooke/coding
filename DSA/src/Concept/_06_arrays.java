@@ -9,6 +9,7 @@ public class _06_arrays {
         for(int ele : arr) {
             System.out.print(ele + ",");
         }
+        System.out.println() ;
     }
 
      /*
@@ -89,6 +90,16 @@ public class _06_arrays {
         }
     }
 
+    public static void reverseArr(int[] arr, int si, int ei) {
+        while(si <= ei) {
+            int temp = arr[si] ;
+            arr[si] = arr[ei] ;
+            arr[ei] = temp ;
+            si++ ;
+            ei-- ;
+        }
+    }
+
     /*
     * Question 6 :-
     * WAF to print pairs in an array
@@ -155,11 +166,7 @@ public class _06_arrays {
         int currSum = 0 ;
         for(int i = 0; i < n; i++) {
             for(int j = i; j < n; j++) {
-                if(i == 0) {
-                    currSum = prefixSum[j] ;
-                } else {
-                    currSum = prefixSum[j] - prefixSum[i-1] ;
-                }
+                currSum = (i == 0) ? prefixSum[j] : (prefixSum[j] - prefixSum[i-1]) ;
                 maxSum = Math.max(maxSum, currSum) ;
             }
         }
@@ -191,16 +198,6 @@ public class _06_arrays {
     * Question 11 :-
     * WAF to rotate an array about a pivot point
     * Time Complexity :- O(n), Space Complexity :- O(1)*/
-    public static void reverseArr(int[] arr, int si, int ei) {
-        while(si <= ei) {
-            int temp = arr[si] ;
-            arr[si] = arr[ei] ;
-            arr[ei] = temp ;
-            si++ ;
-            ei-- ;
-        }
-    }
-
     public static void rotateArr(int[] arr, int d) {
         int n = arr.length ;
         d %= n ;
@@ -248,7 +245,6 @@ public class _06_arrays {
             if(buyingPrice < prices[i]) {
                 int currProfit = prices[i] - buyingPrice ;
                 maxProfit = Math.max(currProfit, maxProfit) ;
-
             } else {
                 buyingPrice = prices[i] ;
             }
@@ -429,8 +425,8 @@ public class _06_arrays {
 //        System.out.println(stockBuyAndSell(prices));
 
         // Test Case for Question 12 :-
-        int[] heights = {4, 2, 0, 6, 3, 2, 5} ;
-        System.out.println(trappingRainWater(heights));
+//        int[] heights = {4, 2, 0, 6, 3, 2, 5} ;
+//        System.out.println(trappingRainWater(heights));
 
         // Test Case for Question 11 :-
 //        int[] arr = {1, 2, 3, 4, 5} ;
@@ -446,8 +442,8 @@ public class _06_arrays {
 //        System.out.println(max_sumArray_sum_kadane(arr));
 
         // Test Case for Question 9 :-
-//        int[] arr = {1, -2, 6, -1, 3} ;
-//        System.out.println(max_sumArray_sum_prefixArray(arr));
+        int[] arr = {1, -2, 6, -1, 3} ;
+        System.out.println(max_sumArray_sum_prefixArray(arr));
 
         // Test Case for Question 8 :-
 //        int[] arr = {1, -2, 6, -1, 3} ;
