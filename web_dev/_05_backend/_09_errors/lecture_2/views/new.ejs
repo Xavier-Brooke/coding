@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>newUser</title>
+</head>
+<body>
+    <h1><i>Create your account</i></h1>
+    <form action="/chats" method="post">
+        <label for="from">msg send by :- </label>
+        <input type="text" required name="from" placeholder="Enter name of sender">
+        <br><br>
+        <label for="to">msg received by :- </label>
+        <input type="text" required name="to" placeholder="Enter name of reciver">
+        <br><br>
+        <textarea name="msg" rows="5" cols="35"></textarea>
+        <br><br>
+        <button>Submit</button>
+    </form>
+</body>
+</html>
