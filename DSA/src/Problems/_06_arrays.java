@@ -1,8 +1,8 @@
 package Problems;
 
-import static Concept._06_arrays.printArr;
-
 public class _06_arrays {
+
+    /* 1D Array */
 
     /*
     * Problem 1 :-
@@ -119,13 +119,118 @@ public class _06_arrays {
         }
     }
 
+    /* 2D Array */
+
+    public static void printArr_2D(int[][] matrix) {
+        for(int[] arr : matrix) {
+            for(int ele : arr) {
+                System.out.print(ele + " ");
+            }
+            System.out.println();
+        }
+        System.out.println();
+    }
+
+    /*
+    * Problem 1 :-
+    * WAF to print array column wise
+    * Time Complexity :-  O(n^2), Space Complexity :- O(1)*/
+    public static void printArr_columnWise(int[][] arr) {
+        int rows = arr.length ;
+        int cols = arr[0].length ;
+        for(int i = 0; i < cols; i++) {
+            for(int j = 0; j < rows; j++) {
+                System.out.print(arr[j][i] + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    /*
+    * Problem 2 :-
+    * WAF to reverse every row of the matrix
+    * Time Complexity :- O(n^2), Space Complexity :- O(1)*/
+    public static void reverseRow(int[][] matrix) {
+        for(int i=0; i < matrix.length; i++) {
+            int si = 0 ;
+            int ei = matrix[i].length-1 ;
+            while (si < ei) {
+                int temp = matrix[i][si] ;
+                matrix[i][si] = matrix[i][ei] ;
+                matrix[i][ei] = temp ;
+                si++ ;
+                ei-- ;
+            }
+        }
+    }
+
+    /*
+    * Problem 3 :-
+    * WAF to print matrix in Snake Pattern
+    * Time Complexity :- O(n^2), Space Complexity :- O(1)*/
+    public static void snakePattern(int[][] matrix) {
+        for(int col = 0; col < matrix[0].length; col++) {
+            int idx = (col%2 == 0) ? 0 : matrix.length-1 ;
+            if(idx == 0) {
+                for(int row = idx; row < matrix.length; row++) {
+                    System.out.print(matrix[row][col] + " ");
+                }
+            } else {
+                for(int row = idx; row >= 0; row--) {
+                    System.out.print(matrix[row][col] + " ");
+                }
+            }
+        }
+    }
+
+    /*
+    * Problem 4 :-
+    * WAF to return transpose of a matrix
+    * Time Complexity :- O(), Space Complexity :- O()*/
+    public static int[][] transpose(int[][] a) {
+        int m = a.length ;
+        int n = a[0].length ;
+
+        int[][] b = new int[m][n] ;
+
+        for(int i = 0; i < m; i++) {
+            for(int j = 0; j < n; j++) {
+                b[i][j] = a[j][i] ;
+            }
+        }
+
+        return b ;
+    }
+
     // main function
     public static void main(String[] args) {
 
+        /* 2D Arrays */
+
         // Test Case for Problem 4 :-
-        int[] arr = {2, 4, 7, 8, 9, 10} ;
-        wavyArray(arr);
-        printArr(arr);
+        int[][] arr = {{1, 2, 3}, {4, 5, 6,}, {7, 8, 9}} ;
+        printArr_2D(transpose(arr));
+
+        // Test Case for Problem 3 :-
+//        int[][] arr = {{1, 2, 3}, {4, 5, 6,}, {7, 8, 9}} ;
+//        snakePattern(arr);
+
+        // Test Case for Problem 2 :-
+//        int[][] arr = {{1, 2, 3}, {4, 5, 6,}, {7, 8, 9}} ;
+//        reverseRow(arr);
+//        printArr_2D(arr);
+
+
+        // Test Case for Problem 1 :-
+//        int[][] arr = {{1, 2, 3}, {4, 5, 6,}, {7, 8, 9}} ;
+//        printArr_columnWise(arr);
+
+        /* 1D Arrays */
+
+        // Test Case for Problem 4 :-
+//        int[] arr = {2, 4, 7, 8, 9, 10} ;
+//        wavyArray(arr);
+//        printArr(arr);
 
         // Test Case for Problem 3 :-
 //        int[] arr = {0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0} ;
