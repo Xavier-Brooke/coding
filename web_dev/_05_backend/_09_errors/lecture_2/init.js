@@ -2,17 +2,17 @@ const mongoose = require("mongoose") ;
 const Chat = require("./models/chats.js") ;
 
 async function main() {
-    await mongoose.connect("mongodb://127.0.0.1:27017/whatsapp") ;
+    await mongoose.connect("mongodb://127.0.0.1:27017/errorDemo") ;
 }
 
 main()
-.then(() => {
-    console.log("Successfully connected to database.") ;
-})
-.catch((error) => {
-    console.log("Something went wrong...") ;
-    console.error(error) ;
-})
+    .then(() => {
+        console.log("Successfully connected to database.") ;
+    })
+    .catch((error) => {
+        console.log("Something went wrong...") ;
+        console.error(error) ;
+    })
 
 let chats = [
     {
