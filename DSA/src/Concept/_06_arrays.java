@@ -314,11 +314,14 @@ public class _06_arrays {
     * WAF to calculate diagonal sum of a given matrix
     * Time Complexity :- O(n), Space Complexity :- O(1)*/
     public static int diagonalSum(int[][] matrix) {
+        int n = matrix.length ;
         int sum = 0 ;
+        int j ;
         for(int i = 0; i < matrix.length; i++) {
             sum += matrix[i][i] ;
-            if(i != (matrix.length-1-i)) {
-                sum += matrix[i][matrix.length-1-i] ;
+            j = (n-1-i) ;
+            if(i != j) {
+                sum += matrix[i][j] ;
             }
         }
         return sum ;
@@ -401,10 +404,10 @@ public class _06_arrays {
 //        System.out.println(staircaseSearch(matrix, 33));
 
         // Test Case for Question 3 :-
-//        int[][] matrix1 = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 16}} ;
-//        System.out.println(diagonalSum(matrix1));
-//        int[][] matrix2 = {{0, 1, 2}, {3, 4, 5}, {6, 7, 8}} ;
-//        System.out.println(diagonalSum(matrix2));
+        int[][] matrix1 = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 16}} ;
+        System.out.println(diagonalSum(matrix1));
+        int[][] matrix2 = {{0, 1, 2}, {3, 4, 5}, {6, 7, 8}} ;
+        System.out.println(diagonalSum(matrix2));
 
         // Test Case for Question 2 :-
 //        int[][] matrix1 = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 16}} ;
@@ -429,13 +432,13 @@ public class _06_arrays {
 //        System.out.println(trappingRainWater(heights));
 
         // Test Case for Question 11 :-
-        int[] arr = {7, 3, 9, 1} ;
-        int d = 9 ;
-        System.out.println("Array before rotation :- ");
-        printArr(arr);
-        rotateArr(arr, d);
-        System.out.println("\nArray after rotation :- ");
-        printArr(arr);
+//        int[] arr = {7, 3, 9, 1} ;
+//        int d = 9 ;
+//        System.out.println("Array before rotation :- ");
+//        printArr(arr);
+//        rotateArr(arr, d);
+//        System.out.println("\nArray after rotation :- ");
+//        printArr(arr);
 
         // Test Case for Questin 10 :-
 //        int[] arr = {1, -2, 6, -1, 3} ;
