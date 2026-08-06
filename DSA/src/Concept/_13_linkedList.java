@@ -1,0 +1,123 @@
+package Concept;
+
+class Node {
+    int val ;
+    Node next ;
+    Node(int val) {
+        this.val = val ;
+        this.next = null ;
+    }
+}
+
+class LinkedList {
+    public static Node head ;
+    public static Node tail ;
+    public int size ;
+
+    void addFirst(int val) {
+        Node newNode = new Node(val) ;
+        size++ ;
+        if(head == null) {
+            head = tail = newNode ;
+            return ;
+        }
+
+        newNode.next = head ;
+        head = newNode ;
+    }
+
+    void addLast(int val) {
+        Node newNode = new Node(val) ;
+        size++ ;
+        if(head == null) {
+            head = tail = newNode ;
+            return ;
+        }
+
+        tail.next = newNode ;
+        tail = newNode ;
+    }
+
+    void add(int idx, int val) {
+        if(idx == 0) {
+            this.addFirst(val);
+            return ;
+        }
+
+        int i = 0 ;
+        Node temp = head ;
+        while(i < idx-1) {
+            temp = temp.next ;
+            i++ ;
+        }
+
+        Node newNode = new Node(val) ;
+        newNode.next = temp.next ;
+        temp.next = newNode ;
+        size++ ;
+    }
+
+    int removeFirst() {
+        if(size == 0) {
+            throw new Error("Can't remove element from empty LinkedList") ;
+        }
+        int val = head.val ;
+        head = head.next ;
+        size-- ;
+        return val;
+    }
+
+    int removeLast() {
+        if(size == 0) {
+            throw new Error("Can't remove element from empty LinkedList") ;
+        } else if(size == 1) {
+            int val = head.val ;
+            head = tail = null ;
+            size-- ;
+            return val ;
+        }
+
+        Node temp = head ;
+        for(int i = 0; i < (size-2); i++) {
+            temp = temp.next ;
+        }
+        tail = temp ;
+        int val = tail.next.val ;
+        tail.next = null ;
+        size-- ;
+        return val ;
+    }
+
+    void print() {
+        Node temp = head ;
+        if(temp == null) {
+            System.out.println("null");
+            return ;
+        }
+        while(temp != null) {
+            System.out.print(temp.val + "->") ;
+            temp = temp.next ;
+        }
+        System.out.print("null\n") ;
+    }
+}
+
+public class _13_linkedList {
+
+    // main function
+    public static void main(String[] args) {
+        LinkedList ll = new LinkedList() ;
+        ll.print();
+        ll.addFirst(1);
+        ll.addLast(2);
+        ll.addFirst(0);
+        ll.addLast(3);
+        ll.addLast(5);
+        ll.addFirst(-1);
+        ll.add(5, 4) ;
+        ll.add(0, -2) ;
+        ll.print();
+        System.out.println(ll.removeLast());
+        ll.print();
+    }
+}
