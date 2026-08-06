@@ -6,3 +6,7 @@ package-lock.json
 .idea/
 *.iml
 DSA/*.gitignore
+
+### ignoring .ipynb files ###
+*.ipynb
+.ipynb_checkpoints/
