@@ -88,6 +88,71 @@ class LinkedList {
         return val ;
     }
 
+    public int linearSearch(int key) {
+        Node temp = head ;
+        int i = 0 ;
+
+        while(temp != null) {
+            if(temp.val == key) {
+                return i ;
+            }
+            i++ ;
+            temp = temp.next ;
+        }
+
+        return -1 ;
+    }
+
+    public int helper(Node head, int key) {
+        if(head == null) {
+            return -1 ;
+        }
+
+        if(head.val == key) {
+            return 0 ;
+        }
+
+        int idx = helper(head.next, key) ;
+
+        if(idx == -1) {
+            return -1 ;
+        } else {
+            return idx+1 ;
+        }
+    }
+
+    public int recSearch(int key) {
+        return helper(head, key) ;
+    }
+
+    public void reverse() {
+        Node prev = null ;
+        Node curr = tail = head ;
+        Node next ;
+
+        while(curr != null) {
+            next = curr.next ;
+            curr.next = prev ;
+            prev = curr ;
+            curr = next ;
+        }
+        head = prev ;
+    }
+
+    public void delete_nth_fromEnd(int n) {
+        int sz = 0 ;
+        Node temp = head ;
+        while(temp != null) {
+            temp = temp.next ;
+            sz++ ;
+        }
+
+        if(sz == n) {
+            head = head.next ;
+            return ;
+        }
+    }
+
     void print() {
         Node temp = head ;
         if(temp == null) {
@@ -107,7 +172,6 @@ public class _13_linkedList {
     // main function
     public static void main(String[] args) {
         LinkedList ll = new LinkedList() ;
-        ll.print();
         ll.addFirst(1);
         ll.addLast(2);
         ll.addFirst(0);
@@ -116,8 +180,7 @@ public class _13_linkedList {
         ll.addFirst(-1);
         ll.add(5, 4) ;
         ll.add(0, -2) ;
-        ll.print();
-        System.out.println(ll.removeLast());
-        ll.print();
+        System.out.println(ll.size);
+        ll.delete_nth_fromEnd(0);
     }
 }
