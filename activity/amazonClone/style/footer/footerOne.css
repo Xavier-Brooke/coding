@@ -1,0 +1,14 @@
+.footer .footer-one  {
+    height: 30px;
+    background-color: #37475A;
+    color: #ccc;
+    text-align: center;
+    padding-top: 15px;
+    font-weight: bold;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.footer .footer-two {
+    height: 300px;
+    background-color: #212b36;
+}
