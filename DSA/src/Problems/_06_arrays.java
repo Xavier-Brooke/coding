@@ -202,14 +202,56 @@ public class _06_arrays {
         return b ;
     }
 
+    /*
+    * Problem 5 :-
+    * WAF to multiply two matrices
+    * Time Complexity :- O(), Space Complexity :- O()*/
+    public static int[][] multiplyMatrices(int[][] A, int[][] B) {
+        int m = A.length ;
+        int n = A[0].length ;
+        int p = B.length ;
+        int q = B[0].length ;
+
+        if(n != p) {
+            throw new Error("Can't multiply matrices") ;
+        }
+
+        int[][] C = new int[m][q] ;
+
+
+        for(int i = 0; i < m; i++) {
+            for(int j = 0; j < q; j++) {
+                int mulSum = 0 ;
+                for(int k = 0; k < n; k++) {
+                  mulSum += A[i][k] * B[k][j] ;
+                }
+                C[i][j] = mulSum ;
+            }
+        }
+
+        return C ;
+    }
+
     // main function
     public static void main(String[] args) {
 
         /* 2D Arrays */
 
+        // Test Case for Problem 5 :-
+        int[][] A = {{1, 2}, {3, 4}, {5, 6}} ;
+        int[][] B = {{2, 1}, {4, 2}} ;
+        int[][] C = multiplyMatrices(A, B) ;
+        for(int[] arr : C) {
+            for(int ele : arr) {
+                System.out.print(ele + " ") ;
+            }
+            System.out.println();
+        }
+        System.out.println();
+
         // Test Case for Problem 4 :-
-        int[][] arr = {{1, 2, 3}, {4, 5, 6,}, {7, 8, 9}} ;
-        printArr_2D(transpose(arr));
+//        int[][] arr = {{1, 2, 3}, {4, 5, 6,}, {7, 8, 9}} ;
+//        printArr_2D(transpose(arr));
 
         // Test Case for Problem 3 :-
 //        int[][] arr = {{1, 2, 3}, {4, 5, 6,}, {7, 8, 9}} ;
