@@ -10,3 +10,6 @@ DSA/*.gitignore
 ### ignoring .ipynb files ###
 *.ipynb
 .ipynb_checkpoints/
+
+### General ###
+ignoredModule/
