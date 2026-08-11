@@ -25,7 +25,7 @@ public class _09_stringBuilders {
     /*
     * Question 2 :-
     * String Compression
-    * Time Complexity :- O(), Space Complexity :- O()*/
+    * Time Complexity :- O(n^2), Space Complexity :- O(n)*/
     public static StringBuilder stringCompression(String str) {
         StringBuilder ans = new StringBuilder() ;
         for(int i = 0; i < str.length(); i++) {
@@ -34,8 +34,8 @@ public class _09_stringBuilders {
             while(j < str.length()) {
                 if((str.charAt(i) == str.charAt(j))) {
                     freq++ ;
-                    j++ ;
                 }
+                j++ ;
             }
             ans.append(str.charAt(i)) ;
             ans.append(freq) ;
