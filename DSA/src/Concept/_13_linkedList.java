@@ -10,8 +10,8 @@ class Node {
 }
 
 class LinkedList {
-    public static Node head ;
-    public static Node tail ;
+    public Node head ;
+    public Node tail ;
     public int size ;
 
     void addFirst(int val) {
@@ -198,6 +198,63 @@ class LinkedList {
         return true ;
     }
 
+    // function to detect loop in LinkedList
+    public boolean hasCycle() {
+        Node slow = head ;
+        Node fast = head ;
+
+        while((fast != null) && (fast.next != null)) {
+            slow = slow.next ;
+            fast = fast.next.next ;
+            if(slow == fast) {
+                return true ;
+            }
+        }
+
+        return false ;
+    }
+
+    public Node getNode(int idx) {
+        Node temp = head ;
+        int i = 0 ;
+        while(i < idx) {
+            temp = temp.next ;
+            i++ ;
+        }
+
+        return temp ;
+    }
+
+    public void removeCycle() {
+        Node slow = head ;
+        Node fast = head ;
+        boolean cycle = false ;
+
+        while((fast != null) && (fast.next != null)) {
+            slow = slow.next ;
+            fast = fast.next.next ;
+
+            if(slow == fast) {
+                cycle = true ;
+                break ;
+            }
+        }
+
+        if(cycle == false) {
+            return ;
+        }
+
+        slow = head ;
+        Node prev = null ;
+        while(slow != fast) {
+            prev = fast ;
+            slow = slow.next ;
+            fast = fast.next ;
+        }
+
+        prev.next = null ;
+    }
+
     void print() {
         Node temp = head ;
         if(temp == null) {
@@ -221,7 +278,13 @@ public class _13_linkedList {
         ll.addLast(2);
         ll.addLast(2);
         ll.addLast(1);
-        ll.print() ;
-        System.out.println(ll.isPalindrome());
+        ll.addLast(4);
+        ll.addLast(5);
+        ll.add(3, 7);
+        ll.addLast(-8);
+        ll.tail.next = ll.head ;
+        System.out.println(ll.hasCycle());
+        ll.removeCycle();
+        System.out.println(ll.hasCycle());
     }
 }
