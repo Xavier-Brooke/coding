@@ -34,9 +34,35 @@ app.get("/", (req, res) => {
     return res.send("This is root route") ;
 })
 
+// all lisings
 app.get("/listings", async (req, res) => {
-    let allListings = await Listing.find({}) ;
-    return res.render("listings/index", { allListings }) ;
+    try {
+        let data = await Listing.find({}) ;
+        let allListings = data ?? "invalid" ;
+        if(allListings !== "invalid") {
+            return res.render("listings/index", { allListings }) ;
+        }
+        return res.render("errors/dataNotFound") ;
+    } catch(err) {
+        console.log(`Something went wrong...`) ;
+        console.error(err) ;
+    }
+})
+
+// details route
+app.get("/listings/:id/details", async (req, res) => {
+    try {
+        let { id } = req.params ;
+        let data = await Listing.findById(id) ;
+        let listing = data ?? "invalid" ;
+        if(listing !== "invalid") {
+            return res.render("listings/details", { listing }) ;
+        }
+        return res.render("errors/dataNotFound") ;
+    } catch(err) {
+        console.log(`Something went wrong...`) ;
+        console.error(err) ;
+    }
 })
 
 app.get(/.*/, (req, res) => {
