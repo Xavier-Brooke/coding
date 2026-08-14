@@ -65,6 +65,72 @@ app.get("/listings/:id/details", async (req, res) => {
     }
 })
 
+// new listing
+app.get("/listings/new", (req, res) => {
+    return res.render("listings/new") ;
+})
+
+// collecting data
+app.post("/listings", async (req, res) => {
+    try {
+        let data = req.body.listing ;
+        let { imgURL } = req.body ;
+        let obj = { ...data, image : {
+            url : imgURL,
+        }}
+        let ans = await Listing.insertOne(obj) ;
+        return res.redirect("/listings") ;
+    } catch(err) {
+        console.log(`Something went wrong...`) ;
+        console.error(err) ;
+    }
+})
+
+// edit route
+app.get("/listings/:id/edit", async (req, res) => {
+    try {
+        let { id } = req.params ;
+        let data = await Listing.findById(id) ;
+        let listing = data ?? "invalid" ;
+        if(listing !== "invalid") {
+            return res.render("listings/edit", { listing }) ;
+        }
+        return res.render("errors/dataNotFound") ;
+    } catch(err) {
+        console.log(`Something went wrong...`) ;
+        console.error(err) ;
+    }
+})
+
+app.put("/listings/:id", async (req, res) => {
+    try {
+        let { id } = req.params ;
+        let data = req.body.listing ;
+        let { imgURL } = req.body ;
+        let obj = { ...data, "image.url" : imgURL}
+        console.log(obj) ;
+        let ans = await Listing.findByIdAndUpdate(id, obj) ;
+        console.log(ans) ;
+        return res.redirect("/listings") ;
+    } catch(err) {
+        console.log(`Something went wrong...`) ;
+        console.error(err) ;
+    }
+})
+
+// delete route
+app.delete("/listings/:id/delete", async (req, res) => {
+    try {
+        let { id } = req.params ;
+        let ans = await Listing.findByIdAndDelete(id) ;
+        return res.redirect("/listings") ;
+    } catch(err) {
+        console.log(`Something went wrong..`) ;
+        console.error(err) ;
+    }
+})
+
+// wild request
 app.get(/.*/, (req, res) => {
     let code = [
         '<div style="background-color:orange; height:300px; width:450px; border:1px solid black;">',

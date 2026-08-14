@@ -6,7 +6,9 @@
     <title>wanderlust</title>
 </head>
 <body>
-    <h3>All Listings</h3>
+    <h3 style="display: inline;">All Listings</h3>
+    &emsp; &emsp;
+    <form method="get" action="/listings/new" style="display: inline;"><button>New Listing</button></form>
     <ul>
         <%  for(let listing of allListings) {%>
             <li><a href="/listings/<%= listing.id %>/details" style="text-decoration: none; color: black;"><%= listing.title %></a></li>
