@@ -1,5 +1,6 @@
 const path = require("node:path") ;
 const express = require("express") ;
+const engine = require("ejs-mate") ;
 const mongoose = require("mongoose") ;
 const Listing = require("./models/listing") ;
 const methodOverride = require("method-override") ;
@@ -22,6 +23,7 @@ main()
 const app = express() ;
 const port = 8000 ;
 
+app.engine('ejs', engine);
 app.set("view engine", "ejs") ;
 app.set("views", path.join(__dirname, "/views")) ;
 
