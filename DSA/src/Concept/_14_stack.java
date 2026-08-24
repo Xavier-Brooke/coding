@@ -77,14 +77,38 @@ class Stack_implementation {
 
 public class _14_stack {
 
-    public static void main(String[] args) {
-        Stack<Integer> s = new Stack<>() ;
-        s.push(1) ;
-        s.push(2) ;
-        System.out.println(s.isEmpty());
-        while(!s.isEmpty()) {
-            System.out.println(s.peek());
-            s.pop() ;
+    public static int[] stockSpanProblem(int[] stock) {
+
+        Stack<Integer> stack = new Stack<>() ;
+        int n = stock.length ;
+        int[] span = new int[n] ;
+
+        stack.push(0) ;
+        span[0] = 1 ;
+
+        for(int i = 1; i < n; i++) {
+            while((!stack.isEmpty()) && (stock[i] >= stock[stack.peek()])) {
+                stack.pop() ;
+            }
+
+            if(stack.isEmpty()) {
+                span[i] = i+1 ;
+            } else {
+                span[i] = i-stack.peek() ;
+            }
+            stack.push(i) ;
         }
+
+        return span ;
+    }
+
+    public static void main(String[] args) {
+       int[] stock = {100, 80, 60, 70, 60, 85, 100} ;
+        int[] span = stockSpanProblem(stock) ;
+
+        for(int ele : span) {
+            System.out.print(ele + " ");
+        }
+        System.out.println();
     }
 }
