@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+</head>
+<body>
+
+    <!-- table tag -->
+    <!-- <table border="black">
+        <caption>A test table with merged cells</caption>
+        <tr>
+            <th rowspan="2"></th>
+            <th colspan="2">Average</th>
+            <th rowspan="2">Red Eyes</th>
+        </tr>
+        <tr>
+            <th>Height</th>
+            <th>Weight</th>
+        </tr>
+        <tr>
+            <th>Male</th>
+            <td>5.10</td>
+            <td>75</td>
+            <td>35&percnt;</td>
+        </tr>
+        <tr>
+            <th>Female</th>
+            <td>5.5</td>
+            <td>60</td>
+            <td>70&percnt;</td>
+        </tr>
+    </table> -->
+
+    <!-- form tag -->
+    <form action="./success.html">
+
+        <div class="name">
+            <input type="text" name="firstName" placeholder="Enter your first name" required>
+            <input type="text" name="midName" placeholder="Enter your mid name">
+            <input type="text" name="lastName" placeholder="Enter your last name">
+        </div>
+        <br><br>
+        <div class="age">
+            <label for="age">Enter your age :- </label>
+            <input type="number" step="1" min="15" max="30" id="age" name="age">
+        </div>
+        <br><br>
+        <div class="gender">
+            <label for="gender">Choose your gender :- </label>
+            <input type="radio" id="male" name="gender">
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender">
+            <label for="female">Female</label>
+        </div>
+        <br><br>
+        <div class="subjects">
+            <p>Choose your subjects :- </p>
+            <input type="checkbox" id="DSA" name="subjects" value="DSA">
+            <label for="DSA">DSA</label>
+            <input type="checkbox" id="DAA" name="subjects" value="DAA">
+            <label for="DAA">DAA</label>
+            <input type="checkbox" id="DM" name="subjects" value="DM">
+            <label for="DM">DM</label>
+            <input type="checkbox" id="OS" name="subjects" value="OS">
+            <label for="OS">OS</label>
+            <input type="checkbox" id="DE" name="subjects" value="DE">
+            <label for="DE">DE</label>
+            <input type="checkbox" id="COA" name="subjects" value="COA">
+            <label for="COA">COA</label>
+        </div>
+        <br><br>
+        <div class="city">
+            <select name="city">
+                <option value="Mumbai">Mumbai</option>
+                <option value="New Delhi">New Delhi</option>
+                <option value="Madras">Madras</option>
+                <option value="Patna">Patna</option>
+                <option value="Banglore">Banglore</option>
+            </select>
+        </div>
+        <br><br>
+        <textarea name="feedback" id="feedback" cols="30" rows="5" placeholder="Enter your feedback here!"></textarea>
+        <br><br>
+        <button type="reset">Rest</button> &emsp; <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
