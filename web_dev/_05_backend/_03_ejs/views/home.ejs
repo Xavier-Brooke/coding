@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style/home.css">
+    <title>home</title>
+</head>
+<body>
+    <h2>Showing result for <span><%= userData.name %></span> </h2>
+    <button id="follow">Follow</button>
+    <button>Message</button>
+    <div class="followers-info">
+        <p class="followers-info-p" id="followers">Followers :- <%= userData.followers %></p>
+        &emsp;
+        <p class="followers-info-p">Following :- <%= userData.following %></p>
+    </div>
+
+    <div class="posts">
+        <% for(let post of userData.posts) {%>
+            <div class="post">
+                <img src="<%= post.image %>">
+                <p class="post-likes" class="post-info">Likes :- <%= post.likes %></p>
+                &emsp;
+                <p id="post-comments" class="post-info">Comments :- <%= post.comments %></p>
+                <div class="btns">
+                    <button id="like-btn">Like</button>
+                </div>
+            </div>
+        <% } %>
+    </div>
+
+    <script src="/script/home.js"></script>
+</body>
+</html>

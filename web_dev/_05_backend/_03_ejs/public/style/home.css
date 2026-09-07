@@ -1,0 +1,41 @@
+h2 {
+    display: inline;
+}
+
+h2 > span {
+    color: rgb(63, 39, 201);
+    text-transform: capitalize;
+}
+
+.followers-info-p {
+    display: inline;
+    line-height: 3;
+}
+
+.posts {
+    height: 50vh;
+    width: 80vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-around;
+    align-items: flex-start;
+}
+
+.post {
+    height: 70%;
+    width: 20%;
+    border: 1px solid black;
+    padding: 1%;
+    container-type: size;
+}
+
+.post > img {
+    height: min(50cqh, 50cqw);
+    width: auto;
+    display: block;
+}
+
+.post-info {
+    display: inline;
+}
