@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>details</title>
+</head>
+<body>
+    <h2>Post details</h2>
+    <div class="id">
+        <label for="id">ID :- </label>
+        <input readonly value="<%= user.id %>" size="<%= user.id?.length %>">
+    </div>
+    <div class="name">
+        <label for="name">User name :- </label>
+        <input readonly value="<%= user.name %>">
+    </div>
+    <div class="msg">
+        <textarea readonly>
+            <%= user.msg %>
+        </textarea>
+    </div>
+    <div class="functional-btns">
+        <button type="button" onclick="location.href='/chats'">Chats</button>
+        &emsp;
+        <button type="button" onclick="location.href='/chats/<%= user.id %>/edit'">Edit</button>
+    </div>
+</body>
+</html>

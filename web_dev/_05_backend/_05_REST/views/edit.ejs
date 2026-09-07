@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>edit</title>
+</head>
+<body>
+    <h2>Edit your post</h2>
+    <form method="post" action="/chats/<%= user.id %>?_method=PATCH">
+        <label for="name">Edit your name :- </label>
+        <input type="text" value="<%= user.name %>" required name="name">
+        <br><br>
+        <textarea name="msg" required cols="35" rows="5">
+            <%= user.msg %>
+        </textarea>
+        <br><br>
+        <button type="reset">Reset</button> &emsp; <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>newChat</title>
+</head>
+<body>
+    <h2>Create Your new Chat</h2>
+    <form method="post" action="/chats">
+        <label for="name">Enter your name :- </label>
+        <input type="text" id="name" placeholder="Enter your name here!" name="name" required maxlength="60" minlength="3">
+        <br><br>
+        <textarea name="msg" required placeholder="Enter your msg here"></textarea>
+        <br><br>
+        <button type="reset">Reset</button> &emsp; <button type="submit">Submit</button>
+    </form>
+    <br><br>
+    <button type="button" onclick="location.href='/chats'">Chats</button>
+</body>
+</html>

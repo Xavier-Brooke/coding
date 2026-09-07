@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="chats.css">
+    <title>chats</title>
+</head>
+<body>
+    <h1>All Chats</h1>
+    <form method="get" action="/chats/new"><button>New Chat</button></form>
+    <div class="container">
+        <% for(let user of users) {%>
+            <div class="post-div">
+                <p>@<%= user.name %></p>
+                <p><%= user.msg %></p>
+                <p>
+                    <form method="get" action="/chats/<%= user.id %>/details" class="functional-btns"><button>Details</button></form>
+                    &emsp;
+                    <form method="get" action="/chats/<%= user.id %>/edit" class="functional-btns"><button>Edit</button></form>
+                    &emsp;
+                    <form method="post" action="/chats/<%= user.id %>/delete?_method=DELETE" class="functional-btns"><button>Delete</button></form>
+                </p>
+            </div>
+        <% } %>
+    </div>
+</body>
+</html>
