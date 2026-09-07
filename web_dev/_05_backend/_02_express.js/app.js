@@ -24,6 +24,16 @@ app.get('/api/html', (req, res) => {
     res.send(html) ;
 })
 
+app.get('/api/search', (req, res) => {
+    let { q } = req.query ;
+    if(q) {
+        const code = `<p>Your search for <span style="font-weight:bold">${q}</span> will be shown here</p>` ;
+        res.send(code) ;
+    } else {
+        res.send("Couldn't get query") ;
+    }
+})
+
 app.get(/.*/, (req, res) => {
     res.send("Page not found") ;
 })
