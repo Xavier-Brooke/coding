@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>details</title>
+</head>
+<body>
+    <h2>Details</h2>
+    <form>
+        <label for="id">ID :- </label>
+        <input type="text" id="id" name="id" value="<%= userData.id %>">
+        <br><br>
+        <label for="name">name :- </label>
+        <input type="text" id="name" name="name" value="<%= userData.name %>">
+        <br><br>
+        <label for="password">password :- </label>
+        <input id="password" name="password" value="<%= userData.password %>">
+        <br><br>
+        <label for="email">emial</label>
+        <input type="email" id="email" name="email" value="<%= userData.email%>">
+        <br><br>
+    </form>
+    <br>
+    <button type="button" onclick="location.href='/chats/<%= userData.id %>/edit'">Edit</button>
+    <button type="button" onclick="location.href='/chats'">Back</button>
+</body>
+</html>

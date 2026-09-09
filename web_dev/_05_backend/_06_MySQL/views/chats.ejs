@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chats</title>
+</head>
+<body>
+    <table border="black">
+        <tr>
+            <th rowspan="2">ID</th>
+            <th rowspan="2">name</th>
+            <th rowspan="2">email</th>
+            <th colspan="3">Functionalities</th>
+        </tr>
+        <tr>
+            <th>Details</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        <% for(let user of data) {%>
+            <tr>
+                <td><%= user.id %></td>
+                <td><%= user.name %></td>
+                <td><%= user.email %></td>
+                <td><button type="button" onclick="location.href='/chats/<%= user.id %>/details'">Details</button></td>
+                <td><button type="button" onclick="location.href='/chats/<%= user.id %>/edit'">Edit</button></td>
+                <td><form method="post" action='/chats/<%= user.id %>/delete?_method=DELETE' style="display: inline;"><button>Delete</button></form></td>
+            </tr>
+        <% } %>
+    </table>
+</body>
+</html>
