@@ -9,7 +9,6 @@ const connection = mysql.createConnection({
     host : 'localhost',
     user : 'root',
     database : 'temp',
-    password : 'w*s#x479z#3*5s'
 })
 
 const query = utils.promisify(connection.query).bind(connection) ;
