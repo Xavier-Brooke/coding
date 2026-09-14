@@ -484,28 +484,26 @@ public class _17_LinkedList {
     public static void main(String[] args) {
 
         // DoubleLL Createion, basic operation and different test cases
-        DoubleLL doubleLL = new DoubleLL() ;
-        doubleLL.addLast(1);
-        doubleLL.addLast(2);
-        doubleLL.addLast(3);
-        doubleLL.addFirst(0);
-
-        doubleLL.print();
-        doubleLL.reverse();
-        doubleLL.print();
+//        DoubleLL doubleLL = new DoubleLL() ;
+//        doubleLL.addLast(1);
+//        doubleLL.addLast(2);
+//        doubleLL.addLast(3);
+//        doubleLL.addFirst(0);
+//
+//        doubleLL.print();
+//        doubleLL.reverse();
+//        doubleLL.print();
 
 //        doubleLL.print();
 //        doubleLL.print(true);
 //        doubleLL.print(false);
 
         // LinkedList Creation, basic operation and different test Cases
-//        LinkedList ll = new LinkedList() ;
-//        ll.addLast(1);
-//        ll.addLast(2);
-//        ll.addLast(3);
-//        ll.addLast(4);
-//        ll.addLast(5);
-//
+        LinkedList ll = new LinkedList() ;
+        ll.addLast(1);
+        ll.addLast(2);
+        ll.addLast(3);
+
 //        ll.print();
 //        ll.zigZag();
 //        ll.print();
