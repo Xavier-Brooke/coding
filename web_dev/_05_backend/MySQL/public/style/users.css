@@ -1,0 +1,12 @@
+.card-div {
+    width: 20vw;
+    height: calc(0.5 * 20vw);
+    border: 1px solid black;
+    margin-bottom: 5%;
+    display: inline-block;
+    padding: 0.5%;
+}
+
+.btns-form {
+    display: inline;
+}

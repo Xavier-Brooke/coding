@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style/details.css">
+    <title>Your Details</title>
+</head>
+<body>
+    <form method="get" action="/insta/<%= user.user_id %>/Edit">
+        <div class="name">
+            <label for="name">Your name :- </label>
+            <input type="text" id="name" name="users[name]" value="<%= user.name %>" readonly>
+        </div>
+        <div class="age">
+            <label for="age">Your age :- </label>
+            <input type="number" id="age" name="users[age]" value="<%= user.age %>" readonly>
+        </div>
+        <div class="email">
+            <label for="email">Your email :- </label>
+            <input type="email" id="email" name="users[email]" value="<%= user.email %>" readonly>
+        </div>
+        <div class="password">
+            <label for="password">Your password :- </label>
+            <input type="text" id="password" name="users[password]" value="<%= user.password %>" readonly>
+        </div>
+        <div class="city">
+            <label for="city">Your city :- </label>
+            <input type="text" id="city" name="users[city]" value="<%= user.city %>" readonly>
+        </div>
+        <div class="coutry">
+            <label for="coutry">Your country :- </label>
+            <input type="text" id="country" name="users[country]" value="<%= user.country %>" readonly>
+        </div>
+        <button type="submit">Edit</button> &emsp; <button type="button" onclick="location.href='/insta/'">Back</button>
+    </form>
+</body>
+</html>

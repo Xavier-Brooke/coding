@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style/users.css">
+    <title>users</title>
+</head>
+<body>
+    <h2>All users</h2>
+    <% for(let user of data) {%>
+        <div class="card-div">
+            <div class="user-info">
+                <p>Name :- <%= user.name %></p>
+                <p>Email :- <%= user.email %></p>
+            </div>
+            <div class="functionalities">
+                <form method="get" action="/insta/<%= user.user_id %>/details" class="btns-form"><button>Details</button></form>
+                <form class="btns-form"><button>Posts</button></form>
+                <form class="btns-form"><button>Edit</button></form>
+                <form class="btns-form"><button>Delete</button></form>
+            </div>
+        </div>
+    <% } %>
+</body>
+</html>
