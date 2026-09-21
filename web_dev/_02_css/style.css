@@ -1,0 +1,26 @@
+.container {
+    width: 50vw;
+    min-height: 25vh;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    position: absolute;
+    top: 25vh;
+    left: 25vw;
+    margin: auto auto;
+    padding: 10px;
+}
+
+.card {
+    width: 40%;
+    border: 1px solid black;
+    overflow: hidden;
+}
+
+.card img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    display: block;
+    object-fit: cover;
+}
