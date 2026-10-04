@@ -1,2 +1,2 @@
-# Coding Journey
-Through this repo i will track my coding journey
+# Coding
+This repo tracks the coding folder

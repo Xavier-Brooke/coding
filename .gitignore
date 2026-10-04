@@ -12,4 +12,4 @@ DSA/*.gitignore
 .ipynb_checkpoints/
 
 ### General ###
-ignoredModule/
+ignore
