@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+</head>
+<body>
+    <form action="conformatioin.html">
+        <div>
+            <label for="name">Enter your name :- </label>
+            <input type="text" id="name" name="name" required minlength="3" maxlength="50" placeholder="Enter your name here!">
+        </div>
+        <br>
+        <div>
+            <label for="age">Select your age :- </label>
+            <input type="number" id="age" name="age" required min="10" max="90" step="1" placeholder="Select your age :- ">
+        </div>
+        <br>
+        <div>
+            <label for="date-time">Choose date & time :- </label>
+            <input type="datetime" id="date-time" name="date-time" required> 
+        </div>
+        <br>
+        <div>
+            <label for="email">Enter your email :- </label>
+            <input type="email"  id="email" name="email" required minlength="10" maxlength="50" placeholder="Enter your email here">
+        </div>
+        <br>
+        <div>
+            <select name="city" id="city">
+                <option value="mumbai">Mumbai</option>
+                <option value="patna">Patna</option>
+                <option value="delhi">Delhi</option>
+            </select>
+        </div>
+        <br>
+        <div>
+            <button type="reset">Reset</button>
+            &emsp;
+            <button type="submit">Submit</button>
+        </div>
+        <br>
+    </form>
+</body>
+</html>
